@@ -32,7 +32,7 @@
 - 🏅 **[Salesforce Certified AI Associate](https://trailhead.salesforce.com/en/credentials/verification/)**  
   - Skills: AI Ethics, Salesforce Einstein AI, Predictive Analytics, AI-driven Business Strategies  
 
-- 🏅 **Salesforce Certified Agentforce Specialist**  
+- 🏅 **[Salesforce Certified Agentforce Specialist](https://trailhead.salesforce.com/en/credentials/verification/)**  
   - Skills: Prompt Engineering, Agent Development, Agentforce Data Library, Grounding Techniques, Data Cloud Integration, AI Automation in Sales & Service Cloud
 
 ## **AWS Certification**  
