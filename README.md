@@ -32,6 +32,9 @@
 - 🏅 **[Salesforce Certified AI Associate](https://trailhead.salesforce.com/en/credentials/verification/)**  
   - Skills: AI Ethics, Salesforce Einstein AI, Predictive Analytics, AI-driven Business Strategies  
 
+- 🏅 **Salesforce Certified Agentforce Specialist**  
+  - Skills: Prompt Engineering, Agent Development, Agentforce Data Library, Grounding Techniques, Data Cloud Integration, AI Automation in Sales & Service Cloud
+
 ## **AWS Certification**  
 - 🏅 **[AWS Certified Data Engineer – Associate](https://www.credly.com/badges/1195c62d-1fc9-462c-8f9d-ded82fae04d7/linked_in_profile)** (Issued Dec 2024 · Expires Dec 2027)  
 
@@ -39,7 +42,7 @@
 - 🏅 **[Certified Data Scientist – 365 Data Science](https://learn.365datascience.com/c/345f122a78)** (Issued Nov 2024)  
   - Skills: SQL, Deep Learning  
 - 🏅 **[Neo4j Certified Professional](https://graphacademy.neo4j.com/c/885b84d1-1181-4f31-aab6-f5c3fcef84dc/)** (Issued Jul 2024)  
-
+## Maverick Advantage Dstinction Certification
 ## **Additional Certifications**  
 - 🎓 **Managing Your Money: MBA Insights for Undergraduates**  
 - 🎓 **Introduction to Internet of Things**  
