@@ -6,6 +6,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/saitejasrivilli)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/saitejasrivilli)
+[![Google Scholar](https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=StKZohYAAAAJ)
 [![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://saitejasrivillibhutturu.github.io)
 
 </div>
@@ -157,7 +158,6 @@
 ---
 
 ## 📈 Key Achievements
-
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
 │  🚀 12.3× Throughput Improvement    │  💾 4× Memory Reduction          │
@@ -190,6 +190,7 @@ I'm actively seeking opportunities in **ML Engineering**, **Deep Learning**, **L
 
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:saiteja.srivillibhutturu@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/saitejasrivilli)
+[![Google Scholar](https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=StKZohYAAAAJ)
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://saitejasrivillibhutturu.github.io)
 
 </div>
