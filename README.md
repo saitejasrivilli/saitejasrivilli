@@ -73,6 +73,30 @@
 
 ## 🚀 Featured Projects
 
+### ⭐ NEW: Advanced AI Agent System
+
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/🤗%20Live%20Demo-Hugging%20Face-blue)](https://huggingface.co/spaces/SaiTejaSrivilli/ai-agent-system)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black)](https://github.com/SaiTejaSrivilli/ai-agent-system)
+![Strategies](https://img.shields.io/badge/Strategies-4-purple)
+
+</div>
+
+**Multi-Strategy AI Reasoning System** implementing cutting-edge techniques from recent AI research papers (Chain-of-Thought, Tree-of-Thoughts, ReAct, Multi-Agent). Built with Groq LLM, Tavily Search, and ChromaDB.
+
+| Feature | Description |
+|---------|-------------|
+| 🔗 **Chain-of-Thought** | Step-by-step reasoning with self-consistency voting |
+| 🌳 **Tree-of-Thoughts** | Multi-path exploration with beam search |
+| ⚡ **ReAct Agent** | Reasoning + Acting with real web search |
+| 👥 **Multi-Agent** | Planner → Worker → Critic collaboration |
+| 🧠 **LLM Auto-Classifier** | Intelligent strategy routing based on task type |
+
+**Research Papers Implemented:** [Chain-of-Thought (Wei et al.)](https://arxiv.org/abs/2201.11903) • [Self-Consistency (Wang et al.)](https://arxiv.org/abs/2203.11171) • [Tree of Thoughts (Yao et al.)](https://arxiv.org/abs/2305.10601) • [ReAct (Yao et al.)](https://arxiv.org/abs/2210.03629)
+
+---
+
 ### 🔥 LLM & GPU Optimization
 
 | Project | Description | Impact |
@@ -87,6 +111,7 @@
 
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
+| [**ai-agent-system**](https://github.com/SaiTejaSrivilli/ai-agent-system) | Multi-strategy AI reasoning with CoT, ToT, ReAct, Multi-Agent | Groq, Tavily, ChromaDB |
 | [**AdvancedLLMAgent**](https://github.com/saitejasrivilli/AdvancedLLMAgent) | Sophisticated LLM agent with tool use capabilities | LangChain, RAG |
 | [**Multi_Agent_Workflow_Automator**](https://github.com/saitejasrivilli/Multi_Agent_Workflow_Automator) | Multi-agent orchestration system | Agent frameworks |
 | [**offline-rag-assistant**](https://github.com/saitejasrivilli/offline-rag-assistant) | Privacy-focused RAG system for offline deployment | Vector DB, Embeddings |
