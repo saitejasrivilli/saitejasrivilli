@@ -17,7 +17,7 @@
 
 **ML & Deep Learning Engineer** with production expertise in **GPU optimization**, **LLM inference**, and **cloud-native AI solutions**. Currently shipping LLM-based clinical automation at **Qure.ai** while advancing full-stack RAG platforms at **UT Arlington**. 
 
-**Key Impact:** Achieved **12.3× throughput improvement** and **4× memory reduction** in LLM inference pipelines. Published research on LLM-based 6G path planning with real-world network optimization results. Proficient across the full ML stack: from CUDA kernel optimization to multi-agent system orchestration.
+**Key Impact:** Achieved **12.3× throughput improvement** and **4× memory reduction** in LLM inference pipelines. Published research on LLM-based 6G path planning across two IEEE venues: OJCOMS journal (2026) and ICC 2026. Proficient across the full ML stack: from CUDA kernel optimization to multi-agent system orchestration.
 
 ---
 
@@ -67,12 +67,23 @@
 
 ## 📚 Publications & Research
 
-### **CTMap: LLM-based 6G Path Planning**
-**IEEE ICC 2026 | arXiv:2601.00110**
+### **DTMAP: Digital Twin-Guided AI Path Planning for Connectivity-Aware Mobility**
+**IEEE Open Journal of the Communications Society (OJCOMS) | Accepted April 2026**
+
+Multi-objective path planning framework integrating wireless digital twins with a fine-tuned LLM for connectivity-aware navigation in 6G/XR environments. Achieves 1.9% outage probability vs. 2.3% for RL, 312 ms avg. inference latency, outperforms A*, greedy, Q-learning, LLaMA 3.1/3.3-70B, and Qwen-2.5-72B.
+
+- **Tunable α parameter** trades off signal strength vs. travel distance across 21 values without retraining
+- **GPT-4o-mini fine-tuned** on instruction-conditioned routing data via DT-grounded oracle supervision
+- **Deterministic sanitization pipeline** brings raw LLM path validity from 65% → 100%
+- **Tech stack:** GPT-4o-mini (OpenAI Fine-tuning API), NVIDIA Sionna (ray tracing), OpenStreetMap, Blender, Python, PyTorch
+
+---
+
+### **CTMap: LLM-Enabled Connectivity-Aware Path Planning in mmWave Digital Twin Networks**
+**IEEE ICC 2026 (CQRM) | arXiv:2601.00110**
 
 Designed an LLM-driven approach to network path optimization for next-generation 6G networks, achieving:
-- **12.3× throughput improvement** over baseline greedy algorithms
-- **4× memory reduction** through GPU-accelerated computation
+- **Connectivity-aware routing** in mmWave networks using digital twin simulation
 - **Practical deployment** on edge devices with on-device inference
 
 [📖 Read on arXiv](https://arxiv.org/abs/2601.00110) | [💻 View Research Code](https://github.com/saitejasrivilli)
@@ -355,9 +366,10 @@ Where I have deep, production-tested knowledge:
 ├──────────────────────────────────────────────────────────────────────┤
 │                                                                      │
 │  🚀 Performance                   🏆 Research & Publications         │
-│  ├─ 12.3× throughput improvement  ├─ IEEE ICC 2026 publication     │
-│  ├─ 4× memory reduction           ├─ 1700× COMSOL speedup (PINN)   │
-│  └─ <50ms p99 latency             └─ 3 patent-eligible algorithms   │
+│  ├─ 12.3× throughput improvement  ├─ IEEE OJCOMS journal (2026)    │
+│  ├─ 4× memory reduction           ├─ IEEE ICC 2026 conference      │
+│  └─ <50ms p99 latency             ├─ 1700× COMSOL speedup (PINN)   │
+│                                   └─ 3 patent-eligible algorithms   │
 │                                                                      │
 │  📚 Open Source & Community        🎓 Career Development             │
 │  ├─ 40+ public repositories       ├─ 6+ cloud certifications       │
@@ -387,7 +399,7 @@ Where I have deep, production-tested knowledge:
 ## 🌍 Why I'm Unique
 
 1. **Full-Stack Expertise:** From CUDA kernels to multi-agent orchestration
-2. **Published Researcher:** IEEE ICC 2026 paper with measurable real-world impact
+2. **Published Researcher:** 2 IEEE publications — OJCOMS journal + ICC 2026 conference — with measurable real-world impact
 3. **Production-Tested:** Healthcare AI, cloud infrastructure, enterprise systems
 4. **GPU Specialist:** Achieved 12.3× improvements through systematic optimization
 5. **Hands-On Infrastructure:** Built Kubernetes clusters, designed ML pipelines, deployed at scale
