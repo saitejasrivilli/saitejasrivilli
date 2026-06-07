@@ -201,27 +201,25 @@ End-to-end implementation of modern LLM alignment techniques on Qwen2.5-7B-Instr
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-**Key Optimization Techniques Applied:**
-1. **Quantization (GPTQ/AWQ):** Reduced model precision while maintaining accuracy
-2. **Speculative Decoding:** Draft model for verification, 2–3× latency reduction
-3. **KV-Cache Optimization:** Memory-mapped cache with pruning strategies
-4. **Batch Processing:** Dynamic batching for maximum GPU utilization
-5. **Attention Optimization:** Custom CUDA kernels for FlashAttention-2
+**Optimization techniques benchmarked on hardware:**
+1. **NF4 / INT8 quantization (bitsandbytes):** FP16→NF4 saves 61.8% VRAM at 16% throughput loss; INT8 slower at batch=1 due to dequantization overhead
+2. **PagedAttention (vLLM):** 1.24–1.32× throughput, 10–18% TTFT reduction vs HuggingFace generate()
+3. **Kernel fusion (torch.compile):** FusedLayerNormLinear eliminates HBM round-trip between LayerNorm and Linear
+4. **Gradient checkpointing:** recompute activations on backward — reduces peak memory at cost of ~33% extra compute
+5. **DataParallel 4× GPU:** 1.80× throughput on 4× A30; CUDA kernel dispatch overhead measured
 
 #### Featured Optimization Projects
 
 | Repository | Focus | Key Result | Status |
 |-----------|-------|-----------|--------|
-| [**attention-optimization**](https://github.com/saitejasrivilli/attention-optimization) | vLLM PagedAttention vs HuggingFace generate() — 4 batch sizes measured | **1.24–1.32× throughput**, **10–18% TTFT reduction** | ⭐ Measured |
-| [**gpu-optimization-mistral**](https://github.com/saitejasrivilli/gpu-optimization-mistral) | GPU memory optimization & quantization for Mistral models | Production-ready deployment | ✅ Production |
-| [**quantization-speculative-decoding-benchmark**](https://github.com/saitejasrivilli/quantization-speculative-decoding-benchmark) | Speculative decoding implementation & comparison | Significant latency reduction | ✅ Active |
-| [**attention-optimization**](https://github.com/saitejasrivilli/attention-optimization) | Custom attention mechanisms & FlashAttention-2 impl. | Memory-efficient transformers | ✅ Optimized |
+| [**attention-optimization**](https://github.com/saitejasrivilli/attention-optimization) | vLLM PagedAttention vs HuggingFace generate() — 4 batch sizes, 10 measured runs | **1.24–1.32× throughput**, **10–18% TTFT reduction** | ⭐ Measured |
+| [**gpu-optimization-mistral**](https://github.com/saitejasrivilli/gpu-optimization-mistral) | FP16/INT8/NF4 quantization + kernel fusion + DataParallel profiling on 4× A30 | NF4 **−61.8% VRAM**, fused ops **37×** on targeted layers | ✅ Measured |
 | [**LORA-implementation**](https://github.com/saitejasrivilli/LORA-implementation) | Low-Rank Adaptation for parameter-efficient fine-tuning | 10× parameter reduction | ✅ Complete |
 
 **Quick Start: Benchmarking vLLM**
 ```bash
-git clone https://github.com/saitejasrivilli/vllm-throughput-benchmark
-cd vllm-throughput-benchmark
+git clone https://github.com/saitejasrivilli/attention-optimization
+cd attention-optimization
 pip install -r requirements.txt
 python benchmark.py --model Qwen/Qwen2.5-7B-Instruct --batch-sizes 1 4 8 16
 # Results: 1.24–1.32× throughput gain over HF generate() on NVIDIA A30
@@ -444,7 +442,7 @@ Where I have deep, production-tested knowledge:
 
 ## 📫 Let's Connect & Collaborate
 
-I'm actively seeking opportunities in **ML Engineering**, **Deep Learning**, **LLM/GenAI**, and **Cloud Architecture** roles. Whether you're building frontier AI systems, scaling ML infrastructure, or advancing AI safety—let's talk!
+I'm actively seeking opportunities in **LLM Post-Training**, **RLHF/GRPO research engineering**, and **ML Systems** roles. Whether you're building frontier AI alignment pipelines, scaling reward modeling, or advancing agent evaluation—let's talk!
 
 <div align="center">
 
