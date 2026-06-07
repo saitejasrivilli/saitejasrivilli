@@ -127,11 +127,11 @@ End-to-end implementation of modern LLM alignment techniques on Qwen2.5-7B-Instr
 | [**efficient-post-training-suite**](https://github.com/saitejasrivilli/efficient-post-training-suite) | Full 6-stage pipeline + SLURM configs | SFT → DPO → GRPO → Agent → Eval on A30 cluster |
 | [**reward-model-training**](https://github.com/saitejasrivilli/reward-model-training) | Bradley-Terry RM on HH-RLHF · scalar head · ECE + calibration curve | Val acc **65.0%**, test acc **62.7%**, mean margin **0.29** (measured A30) |
 | [**preference-data-pipeline**](https://github.com/saitejasrivilli/preference-data-pipeline) | HH-RLHF · UltraFeedback · OASST1 → quality filter → MinHash dedup → DPO JSONL | 14 unit tests · chatml/llama3 templates · contamination check |
-| [**code-agent-eval-benchmark**](https://github.com/saitejasrivilli/code-agent-eval-benchmark) | GSM8K · HumanEval · LLM-as-Judge | GSM8K **54.0%** · HumanEval pass@1 **70.0%** · Judge **8.2/10** |
+| [**code-agent-eval-benchmark**](https://github.com/saitejasrivilli/code-agent-eval-benchmark) | ReAct tool-use harness · 14 tasks · python_exec / calculator / lookup | **100%** task success · **100%** error recovery · 1.3 avg steps (ceiling agent) |
 | [**distributed-training-models**](https://github.com/saitejasrivilli/distributed-training-models) | FSDP · DDP · multi-node SLURM | FSDP fp16 2-GPU **21,844 tok/s**; multi-node configs for 2/4-node Qwen2.5-7B |
 | [**attention-optimization**](https://github.com/saitejasrivilli/attention-optimization) | vLLM PagedAttention vs HuggingFace | **1.24–1.32×** throughput · **10–18%** TTFT reduction (10 measured runs) |
 
-**Key techniques implemented:** GRPO with group-relative advantages, verifiable rewards (RLVR), process reward models with step-level discounting, RLAIF (LLM-as-judge → DPO), STaR (self-taught reasoner), rejection sampling fine-tuning, multi-node FSDP with SLURM, NF4/INT8 quantization.
+**Key techniques implemented:** GRPO with group-relative advantages, verifiable rewards (RLVR), process reward models with step-level discounting, Constitutional AI (critique→revise→DPO), RLAIF pairwise judge (60 pairs/10 prompts, K=4), rejection sampling fine-tuning (ReST/RAFT), STaR (self-taught reasoner), multi-node FSDP with SLURM, NF4/INT8 quantization.
 
 ---
 
@@ -422,11 +422,11 @@ Where I have deep, production-tested knowledge:
 
 ## 🎯 What I'm Currently Working On
 
-- 🔭 **LLM post-training**: Agent GRPO with verifiable rewards, PRM step-level rewards, RLAIF preference generation
-- 🌱 **STaR / rejection sampling**: self-taught reasoning loops — generate rationale → filter correct → SFT → iterate
+- 🔭 **LLM post-training**: Constitutional AI (critique→revise→DPO), RLAIF pairwise judge, rejection sampling SFT
+- 🌱 **Agent evaluation**: ReAct harness with tool-use (python_exec / calculator / lookup), 14 tasks, error recovery
 - ⚡ **Inference optimization**: vLLM PagedAttention benchmarks, NF4 quantization (−61.8% VRAM), multi-node FSDP
 - 🏥 **Clinical AI**: LLM-based protocol automation with FHIR/EPIC integrations at Qure.ai
-- 📊 **Evaluation**: multi-axis LLM benchmarking (GSM8K, HumanEval, LLM-as-judge)
+- 📊 **Reward modeling**: Bradley-Terry RM (65% val acc), BoN scaling, calibration analysis
 
 ---
 
