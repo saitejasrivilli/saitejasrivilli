@@ -211,7 +211,7 @@ End-to-end implementation of modern LLM alignment techniques on Qwen2.5-7B-Instr
 
 | Repository | Focus | Key Result | Status |
 |-----------|-------|-----------|--------|
-| [**vllm-throughput-benchmark**](https://github.com/saitejasrivilli/vllm-throughput-benchmark) | Comprehensive benchmarking suite for vLLM inference | **12.3× throughput**, **4× memory reduction** | ⭐ Featured |
+| [**attention-optimization**](https://github.com/saitejasrivilli/attention-optimization) | vLLM PagedAttention vs HuggingFace generate() — 4 batch sizes measured | **1.24–1.32× throughput**, **10–18% TTFT reduction** | ⭐ Measured |
 | [**gpu-optimization-mistral**](https://github.com/saitejasrivilli/gpu-optimization-mistral) | GPU memory optimization & quantization for Mistral models | Production-ready deployment | ✅ Production |
 | [**quantization-speculative-decoding-benchmark**](https://github.com/saitejasrivilli/quantization-speculative-decoding-benchmark) | Speculative decoding implementation & comparison | Significant latency reduction | ✅ Active |
 | [**attention-optimization**](https://github.com/saitejasrivilli/attention-optimization) | Custom attention mechanisms & FlashAttention-2 impl. | Memory-efficient transformers | ✅ Optimized |
@@ -222,8 +222,8 @@ End-to-end implementation of modern LLM alignment techniques on Qwen2.5-7B-Instr
 git clone https://github.com/saitejasrivilli/vllm-throughput-benchmark
 cd vllm-throughput-benchmark
 pip install -r requirements.txt
-python benchmark.py --model mistral-7b-instruct --batch-size 128 --seq-length 512
-# Results: ~1,064 tokens/sec on A30 GPU
+python benchmark.py --model Qwen/Qwen2.5-7B-Instruct --batch-sizes 1 4 8 16
+# Results: 1.24–1.32× throughput gain over HF generate() on NVIDIA A30
 ```
 
 ---
