@@ -2,7 +2,7 @@
 
 # 👋 Hi, I'm Sai Teja Srivillibhutturu
 
-### ML & Deep Learning Engineer | LLM Specialist | Cloud Architect
+### LLM Post-Training Engineer | RLHF · GRPO · Agent RL | GPU Systems
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/saitejasrivilli)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/saitejasrivilli)
@@ -15,9 +15,16 @@
 
 ## 🎯 Professional Summary
 
-**ML & Deep Learning Engineer** with production expertise in **GPU optimization**, **LLM inference**, and **cloud-native AI solutions**. Currently shipping LLM-based clinical automation at **Qure.ai** while advancing full-stack RAG platforms at **UT Arlington**. 
+**LLM Post-Training Engineer** focused on the full alignment pipeline: SFT → DPO → GRPO → Agent RL with verifiable rewards. Building on 4× NVIDIA A30 at UT Arlington and shipping clinical AI at Qure.ai.
 
-**Key Impact:** Achieved **12.3× throughput improvement** and **4× memory reduction** in LLM inference pipelines. Published research on LLM-based 6G path planning across two IEEE venues: OJCOMS journal (2026) and ICC 2026. Proficient across the full ML stack: from CUDA kernel optimization to multi-agent system orchestration.
+**Post-Training work (all benchmarked on real hardware):**
+- **Agent GRPO on GSM8K** — best reward 0.5575 over 200 iterations; policy learns to call a Python executor tool and condition on tool results before producing `<final_answer>`
+- **PRM (Process Reward Model)** — step-level rewards (γ=0.9) achieve best reward 1.0659; step signal contributes 15% of gradient even on wrong-answer rollouts
+- **SFT → DPO → RLVR pipeline** — BERTScore 0.780 → 0.855 (+9.6%), DPO margin +0.137, RLVR best reward 0.8189
+- **vLLM vs HF inference** — 1.24–1.32× real throughput gain, 10–18% TTFT reduction (measured, not estimated)
+- **Quantization** — NF4 reduces Qwen2.5-7B VRAM from 15.25 GB → 5.83 GB (−61.8%) at only 16% throughput loss
+
+Published IEEE research on LLM-based path planning (OJCOMS 2026, ICC 2026).
 
 ---
 
@@ -109,6 +116,23 @@ Experience my work in action. All demos are production-ready and actively mainta
 
 ## 🚀 Featured Projects
 
+### 🧠 LLM Post-Training Pipeline — SFT → DPO → GRPO → Agent RL
+
+End-to-end implementation of modern LLM alignment techniques on Qwen2.5-7B-Instruct across 4× NVIDIA A30 GPUs. All numbers are measured on real hardware.
+
+| Repository | Method | Key Result |
+|-----------|--------|-----------|
+| [**rlhf-synthesis-optimization**](https://github.com/saitejasrivilli/rlhf-synthesis-optimization) | PPO · DPO · GRPO · Agent GRPO · PRM · RLAIF · STaR | Agent GRPO best reward **0.5575** (200 iters); PRM best **1.0659**; LLM-PPO **0.9007** |
+| [**LLM_FineTuning_SFT_Production**](https://github.com/saitejasrivilli/LLM_FineTuning_SFT_Production) | SFT → DPO → RLVR | BERTScore **0.780 → 0.855**; DPO margin **+0.137**; RLVR best reward **0.8189** |
+| [**efficient-post-training-suite**](https://github.com/saitejasrivilli/efficient-post-training-suite) | Full 6-stage pipeline + SLURM configs | SFT → DPO → GRPO → Agent → Eval on A30 cluster |
+| [**code-agent-eval-benchmark**](https://github.com/saitejasrivilli/code-agent-eval-benchmark) | GSM8K · HumanEval · LLM-as-Judge | GSM8K **54.0%** · HumanEval pass@1 **70.0%** · Judge **8.2/10** |
+| [**distributed-training-models**](https://github.com/saitejasrivilli/distributed-training-models) | FSDP · DDP · multi-node SLURM | FSDP fp16 2-GPU **21,844 tok/s**; multi-node configs for 2/4-node Qwen2.5-7B |
+| [**attention-optimization**](https://github.com/saitejasrivilli/attention-optimization) | vLLM PagedAttention vs HuggingFace | **1.24–1.32×** throughput · **10–18%** TTFT reduction (10 measured runs) |
+
+**Key techniques implemented:** GRPO with group-relative advantages, verifiable rewards (RLVR), process reward models with step-level discounting, RLAIF (LLM-as-judge → DPO), STaR (self-taught reasoner), rejection sampling fine-tuning, multi-node FSDP with SLURM, NF4/INT8 quantization.
+
+---
+
 ### ⭐ Advanced AI Agent System — Multi-Strategy Reasoning
 
 <div align="center">
@@ -145,24 +169,34 @@ Experience my work in action. All demos are production-ready and actively mainta
 
 **Achieving production-scale inference performance through systematic optimization.**
 
-#### Performance Benchmarks
+#### Performance Benchmarks (Measured — NVIDIA A30, Qwen2.5-7B-Instruct)
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│              vLLM Inference Optimization Results                 │
+│          vLLM vs HuggingFace generate() — Real Measurements      │
 ├─────────────────────────────────────────────────────────────────┤
+│  Batch │ HF tok/s │ vLLM tok/s │ Speedup │ HF TTFT │ vLLM TTFT │
+│  ──────┼──────────┼────────────┼─────────┼─────────┼────────── │
+│    1   │   37.6   │    49.8    │  1.32×  │  29 ms  │   24 ms   │
+│    4   │  149.1   │   190.2    │  1.28×  │  32 ms  │   28 ms   │
+│    8   │  297.7   │   368.4    │  1.24×  │  49 ms  │   43 ms   │
+│   16   │  563.1   │   697.5    │  1.24×  │  73 ms  │   66 ms   │
 │                                                                   │
-│  Metric              Baseline    Optimized    Improvement        │
-│  ────────────────────────────────────────────────────────────   │
-│  Throughput          87 tok/s    1,064 tok/s  ✅ 12.3×          │
-│  Memory (Mistral-7B) 80 GB       20 GB        ✅ 4.0×           │
-│  Latency (p99)       850 ms      45 ms        ✅ 18.9×          │
-│  Cost/1M Tokens      $4.20       $1.30        ✅ 3.2×           │
+│  Mechanism: PagedAttention KV-cache + CUDA graph capture         │
+│  3 warmup + 5 measure runs per batch size                        │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│            Quantization — FP16 vs INT8 vs NF4 (A30)             │
+├─────────────────────────────────────────────────────────────────┤
+│  Precision │  TTFT   │  tok/s │  VRAM   │  Reduction            │
+│  ──────────┼─────────┼────────┼─────────┼──────────────         │
+│  FP16      │  69.8ms │  19.4  │ 15.25GB │  baseline             │
+│  INT8      │ 1392ms  │   1.2  │  8.82GB │  −42.2% VRAM          │
+│  NF4       │  272ms  │  16.2  │  5.83GB │  −61.8% VRAM ✅       │
 │                                                                   │
-│  Environment: NVIDIA A30 GPU (24GB VRAM)                         │
-│  Batch Size: 128  | Sequence Length: 512                         │
-│  Model: Mistral-7B-Instruct                                      │
-│                                                                   │
+│  NF4: best tradeoff — 61.8% memory reduction, 16% throughput    │
+│  loss. Fits Qwen2.5-7B in 5.83 GB (RTX 3080 / 4070 class)      │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -319,16 +353,16 @@ Rigorous evaluation frameworks for responsible AI development.
 
 Where I have deep, production-tested knowledge:
 
-| Domain | Depth | Key Projects | Confidence |
-|--------|-------|--------------|-----------|
-| **LLM Inference & Optimization** | ⭐⭐⭐⭐⭐ | vLLM benchmarks, quantization, speculative decoding | Production-tested |
-| **GPU Optimization & CUDA** | ⭐⭐⭐⭐⭐ | Memory reduction, custom kernels, attention optimization | 12.3× improvements |
-| **RAG Systems & Vector DBs** | ⭐⭐⭐⭐⭐ | Multi-strategy retrieval, offline RAG, embedding selection | 40+ projects |
-| **Multi-Agent Systems** | ⭐⭐⭐⭐⭐ | ReAct, CoT, ToT, multi-agent orchestration | 4 reasoning strategies |
-| **Cloud Architecture** | ⭐⭐⭐⭐ | AWS, Oracle, scalable ML pipelines | Certified |
-| **Production MLOps** | ⭐⭐⭐⭐ | CI/CD, Kubernetes, monitoring, reproducibility | Healthcare + Enterprise |
-| **Computer Vision** | ⭐⭐⭐⭐ | Detection, segmentation, video analysis | Medical + Telecom |
-| **Data Engineering** | ⭐⭐⭐⭐ | ETL pipelines, Spark, streaming, warehouse design | Petabyte-scale |
+| Domain | Depth | Key Projects | Evidence |
+|--------|-------|--------------|---------|
+| **LLM Post-Training (RLHF/GRPO)** | ⭐⭐⭐⭐⭐ | PPO, DPO, GRPO, Agent GRPO, PRM, RLAIF, STaR | best_reward 0.5575–1.0659 measured |
+| **Reward Modeling & Evaluation** | ⭐⭐⭐⭐⭐ | Verifiable rewards, process rewards, LLM-as-judge | GSM8K 54%, HumanEval 70% |
+| **LLM Inference & Optimization** | ⭐⭐⭐⭐⭐ | vLLM PagedAttention, NF4/INT8 quant, KV-cache | 1.32× throughput, −61.8% VRAM |
+| **Distributed Training** | ⭐⭐⭐⭐⭐ | FSDP, DDP, multi-node SLURM, torchrun | 21,844 tok/s FSDP fp16 2-GPU |
+| **GPU Optimization & CUDA** | ⭐⭐⭐⭐⭐ | Profiling, quantization, attention, gradient checkpointing | A30 4-GPU cluster |
+| **Multi-Agent & RAG Systems** | ⭐⭐⭐⭐ | ReAct, CoT, ToT, self-healing RAG | Production deployments |
+| **Cloud Architecture** | ⭐⭐⭐⭐ | AWS, Oracle, Kubernetes, FHIR/EPIC | Certified, Qure.ai prod |
+| **Research & Publications** | ⭐⭐⭐⭐ | IEEE OJCOMS 2026, ICC 2026, path planning | 2 peer-reviewed venues |
 
 ---
 
@@ -365,11 +399,11 @@ Where I have deep, production-tested knowledge:
 │                     PRODUCTION IMPACT METRICS                        │
 ├──────────────────────────────────────────────────────────────────────┤
 │                                                                      │
-│  🚀 Performance                   🏆 Research & Publications         │
-│  ├─ 12.3× throughput improvement  ├─ IEEE OJCOMS journal (2026)    │
-│  ├─ 4× memory reduction           ├─ IEEE ICC 2026 conference      │
-│  └─ <50ms p99 latency             ├─ 1700× COMSOL speedup (PINN)   │
-│                                   └─ 3 patent-eligible algorithms   │
+│  🚀 Post-Training Results          🏆 Research & Publications         │
+│  ├─ Agent GRPO reward 0.5575      ├─ IEEE OJCOMS journal (2026)    │
+│  ├─ PRM best reward 1.0659        ├─ IEEE ICC 2026 conference      │
+│  ├─ vLLM 1.32× throughput gain   ├─ 1700× COMSOL speedup (PINN)   │
+│  └─ NF4 −61.8% VRAM (5.83 GB)    └─ 3 patent-eligible algorithms   │
 │                                                                      │
 │  📚 Open Source & Community        🎓 Career Development             │
 │  ├─ 40+ public repositories       ├─ 6+ cloud certifications       │
@@ -388,22 +422,22 @@ Where I have deep, production-tested knowledge:
 
 ## 🎯 What I'm Currently Working On
 
-- 🔭 **Optimizing LLM inference pipelines** for sub-50ms latency at scale
-- 🌱 **Advanced KV-cache management** and speculative decoding techniques  
-- 👯 **Multi-agent orchestration** for real-world problem-solving workflows
-- 🏥 **Clinical AI automation** with FHIR/EPIC integrations at Qure.ai
-- 💬 **AI safety & evaluation** frameworks for responsible model deployment
+- 🔭 **LLM post-training**: Agent GRPO with verifiable rewards, PRM step-level rewards, RLAIF preference generation
+- 🌱 **STaR / rejection sampling**: self-taught reasoning loops — generate rationale → filter correct → SFT → iterate
+- ⚡ **Inference optimization**: vLLM PagedAttention benchmarks, NF4 quantization (−61.8% VRAM), multi-node FSDP
+- 🏥 **Clinical AI**: LLM-based protocol automation with FHIR/EPIC integrations at Qure.ai
+- 📊 **Evaluation**: multi-axis LLM benchmarking (GSM8K, HumanEval, LLM-as-judge)
 
 ---
 
 ## 🌍 Why I'm Unique
 
-1. **Full-Stack Expertise:** From CUDA kernels to multi-agent orchestration
-2. **Published Researcher:** 2 IEEE publications — OJCOMS journal + ICC 2026 conference — with measurable real-world impact
-3. **Production-Tested:** Healthcare AI, cloud infrastructure, enterprise systems
-4. **GPU Specialist:** Achieved 12.3× improvements through systematic optimization
-5. **Hands-On Infrastructure:** Built Kubernetes clusters, designed ML pipelines, deployed at scale
-6. **Open Source Leader:** 40+ repos, active in AI safety and benchmarking communities
+1. **Post-Training depth:** implemented the full stack — SFT, DPO, PPO, GRPO, Agent GRPO with tool use, PRM, RLAIF, STaR — all with real measured results on Qwen2.5-7B
+2. **Verifiable numbers:** every benchmark in my repos is measured on real hardware (NVIDIA A30), not estimated or copy-pasted
+3. **Systems + algorithms:** can take a training run from SLURM launch through multi-node FSDP to reward model evaluation
+4. **Published Researcher:** 2 IEEE publications (OJCOMS 2026, ICC 2026) on LLM-based path planning in 6G networks
+5. **Production AI:** shipping clinical LLM automation with FHIR/EPIC integrations at Qure.ai
+6. **40+ public repos** spanning post-training, inference optimization, distributed training, and evaluation
 
 ---
 
