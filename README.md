@@ -31,7 +31,7 @@ Published IEEE research on LLM-based path planning (OJCOMS 2026, ICC 2026).
 ## 💼 Professional Experience
 
 ### **AI Solutions Engineer Intern** @ Qure.ai
-📍 *Arlington, TX | Mar 2026 – Present*
+📍 *Arlington, TX | Mar 2026 – May 2026*
 
 - **Clinical Protocol Automation:** Leading LLM configuration for hospital clients (Mount Sinai, Medstar) to automate clinical workflows using proprietary clinical knowledge
 - **Healthcare Interoperability:** Building EPIC/FHIR integrations to enable real-time protocol recommendations directly in hospital systems
@@ -42,7 +42,7 @@ Published IEEE research on LLM-based path planning (OJCOMS 2026, ICC 2026).
 ---
 
 ### **Graduate Research Assistant – TopGPT Project** @ UT Arlington
-📍 *Arlington, TX | Jun 2025 – Present*
+📍 *Arlington, TX | Jun 2025 – May 2026*
 
 - **Full-Stack LLM/RAG Platform:** Building enterprise-grade retrieval-augmented generation system for knowledge workers
 - **GPU Infrastructure:** Leveraging 4× NVIDIA A30 cluster (96GB total VRAM) for multi-GPU DDP training and inference optimization
@@ -52,7 +52,7 @@ Published IEEE research on LLM-based path planning (OJCOMS 2026, ICC 2026).
 
 ---
 
-### **ML Engineer (Contract)** @ DentalScan / ReplyQuickAI
+### **ML Engineer Intern** @ DentalScan / ReplyQuickAI
 📍 *Remote | Dec 2025 – Feb 2026*
 
 - **Computer Vision Pipeline:** Developed CNN-based dental image analysis system with automated defect detection
