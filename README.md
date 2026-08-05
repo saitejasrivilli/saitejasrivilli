@@ -407,8 +407,8 @@ Where I have deep, production-tested knowledge:
 │                                                                      │
 │  📚 Open Source & Community        🎓 Career Development             │
 │  ├─ 40+ public repositories       ├─ 6+ cloud certifications       │
-│  ├─ 2.5K+ GitHub stars            ├─ 20+ specialized courses       │
-│  └─ Active in AI safety research  └─ Mentoring + technical writing  │
+│  ├- Active in AI safety research  ├─ 20+ specialized courses       │
+│ 
 │                                                                      │
 │  🔧 Systems Engineering           💼 Professional Growth             │
 │  ├─ Multi-GPU DDP training        ├─ From SWE → ML Engineer path   │
