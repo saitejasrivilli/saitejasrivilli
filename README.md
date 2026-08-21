@@ -2,466 +2,243 @@
 
 # 👋 Hi, I'm Sai Teja Srivillibhutturu
 
-### LLM Post-Training Engineer | RLHF · GRPO · Agent RL | GPU Systems
+### Software Engineer – AI/ML | LLM Systems · ML Infrastructure · Distributed Systems · GPU Optimization
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/saitejasrivilli)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/saitejasrivilli)
-[![Google Scholar](https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=StKZohYAAAAJ)
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://saitejasrivillibhutturu.github.io)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://linkedin.com/in/saitejasrivilli)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/saitejasrivilli)
+[![Google Scholar](https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge\&logo=google-scholar\&logoColor=white)](https://scholar.google.com/citations?user=StKZohYAAAAJ)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge\&logo=google-chrome\&logoColor=white)](https://saitejasrivillibhutturu.github.io)
 
 </div>
 
 ---
 
-## 🎯 Professional Summary
+## 🎯 About Me
 
-**LLM Post-Training Engineer** focused on the full alignment pipeline: SFT → DPO → GRPO → Agent RL with verifiable rewards. Building on 4× NVIDIA A30 at UT Arlington and shipping clinical AI at Qure.ai.
+I'm a **Software Engineer – AI/ML at Oracle** focused on building production AI systems across **LLM applications, retrieval, model evaluation, inference optimization, and cloud infrastructure**.
 
-**Post-Training work (all benchmarked on real hardware):**
-- **Agent GRPO on GSM8K** — best reward 0.5575 over 200 iterations; policy learns to call a Python executor tool and condition on tool results before producing `<final_answer>`
-- **PRM (Process Reward Model)** — step-level rewards (γ=0.9) achieve best reward 1.0659; step signal contributes 15% of gradient even on wrong-answer rollouts
-- **SFT → DPO → RLVR pipeline** — BERTScore 0.780 → 0.855 (+9.6%), DPO margin +0.137, RLVR best reward 0.8189
-- **vLLM vs HF inference** — 1.24–1.32× real throughput gain, 10–18% TTFT reduction (measured, not estimated)
-- **Quantization** — NF4 reduces Qwen2.5-7B VRAM from 15.25 GB → 5.83 GB (−61.8%) at only 16% throughput loss
+My background combines:
 
-Published IEEE research on LLM-based path planning (OJCOMS 2026, ICC 2026).
+* **Production AI/ML:** RAG, LLM evaluation, fine-tuning, model serving, inference optimization
+* **ML Systems:** PyTorch, distributed training, CUDA, NCCL, FSDP, vLLM, FlashAttention
+* **Distributed Systems:** microservices, replication, consensus, fault tolerance, Kubernetes
+* **Backend Engineering:** Python, Go, Java, REST APIs, PostgreSQL, Redis
+* **Research:** LLM-based path planning, digital twins, wireless connectivity optimization
+
+I enjoy working at the intersection of **machine learning and systems engineering** — taking models from experimentation through optimization, deployment, evaluation, and production operation.
 
 ---
 
 ## 💼 Professional Experience
 
-### **AI Solutions Engineer Intern** @ Qure.ai
-📍 *Arlington, TX | Mar 2026 – May 2026*
+### **Oracle — Software Engineer, AI/ML**
 
-- **Clinical Protocol Automation:** Leading LLM configuration for hospital clients (Mount Sinai, Medstar) to automate clinical workflows using proprietary clinical knowledge
-- **Healthcare Interoperability:** Building EPIC/FHIR integrations to enable real-time protocol recommendations directly in hospital systems
-- **Infrastructure Redesign:** Architecting pluggable executor framework for clinical pipeline orchestration—Docker-first, API-driven design with portable artifact store across environments
+**Jun 2025 – Present | United States**
 
-**Tech Stack:** Python, FastAPI, Docker, Kubernetes, FHIR, Healthcare APIs
+* Engineer production ML/LLM systems spanning **data processing, retrieval, ranking, evaluation, and inference**.
+* Built enterprise RAG pipelines covering **document processing, embeddings, hybrid search, reranking, and LLM generation**, improving retrieval relevance **21%** and reducing hallucinations **30%**.
+* Developed Python/SQL pipelines and automated evaluation frameworks measuring accuracy, retrieval quality, ranking performance, latency, and failure rates across **thousands of queries**.
+* Applied **SFT/LoRA fine-tuning, batching, KV caching, and quantization**, improving task accuracy **78% → 86%** and reducing p95 latency **1.2s → 420ms**.
+* Productionized ML/GenAI services using **AWS, Docker, Kubernetes, and CI/CD** with validation, monitoring, versioning, and rollback.
 
----
+### **University of Texas at Arlington — Graduate Research Assistant**
 
-### **Graduate Research Assistant – TopGPT Project** @ UT Arlington
-📍 *Arlington, TX | Jun 2025 – May 2026*
+**Aug 2024 – May 2025 | Arlington, TX**
 
-- **Full-Stack LLM/RAG Platform:** Building enterprise-grade retrieval-augmented generation system for knowledge workers
-- **GPU Infrastructure:** Leveraging 4× NVIDIA A30 cluster (96GB total VRAM) for multi-GPU DDP training and inference optimization
-- **Research & Development:** Experimenting with advanced RAG patterns, prompt optimization, and efficient fine-tuning techniques
+* Developed an LLM-powered connectivity-aware navigation system combining **OpenStreetMap/OSMnx, Blender Digital Twins, and NVIDIA Sionna** for realistic mmWave signal propagation.
+* Automated Digital Twin dataset generation into **1,000+ instruction-tuning samples** using Python, NumPy, and Pandas on **4× NVIDIA A30 GPUs**.
+* Fine-tuned GPT-4o Mini on routing datasets generated with a modified Dijkstra algorithm, improving valid route generation **71.4% → 100%** while achieving **76.4% oracle signal coverage**.
+* Accelerated routing experiments **~60%** using Dockerized GPU environments and PyTorch/CUDA across **10K+ routing scenarios**.
 
-**Tech Stack:** PyTorch, CUDA, vLLM, Vector Databases, LangChain
+### **Tata Consultancy Services — Software Engineer**
 
----
+**Jun 2019 – May 2023 | Chennai, India**
 
-### **ML Engineer Intern** @ DentalScan / ReplyQuickAI
-📍 *Remote | Dec 2025 – Feb 2026*
-
-- **Computer Vision Pipeline:** Developed CNN-based dental image analysis system with automated defect detection
-- **Cloud Deployment:** End-to-end pipeline from model training to production on AWS (S3, EC2, SageMaker)
-- **Experiment Tracking:** Integrated MLflow for reproducible model versioning and metric comparison
-
-**Tech Stack:** PyTorch, TensorFlow, AWS (S3, EC2, SageMaker), MLflow, OpenCV
-
----
-
-### **Software Engineer (4 yrs)** @ Tata Consultancy Services
-📍 *India | Jun 2019 – May 2023*
-
-- Built scalable Java-based backend systems for financial services domain
-- Designed distributed system architectures and optimized database performance
-- Led API design and microservices migration initiatives
-
----
-
-## 📚 Publications & Research
-
-### **DTMAP: Digital Twin-Guided AI Path Planning for Connectivity-Aware Mobility**
-**IEEE Open Journal of the Communications Society (OJCOMS) | Accepted April 2026**
-
-Multi-objective path planning framework integrating wireless digital twins with a fine-tuned LLM for connectivity-aware navigation in 6G/XR environments. Achieves 1.9% outage probability vs. 2.3% for RL, 312 ms avg. inference latency, outperforms A*, greedy, Q-learning, LLaMA 3.1/3.3-70B, and Qwen-2.5-72B.
-
-- **Tunable α parameter** trades off signal strength vs. travel distance across 21 values without retraining
-- **GPT-4o-mini fine-tuned** on instruction-conditioned routing data via DT-grounded oracle supervision
-- **Deterministic sanitization pipeline** brings raw LLM path validity from 65% → 100%
-- **Tech stack:** GPT-4o-mini (OpenAI Fine-tuning API), NVIDIA Sionna (ray tracing), OpenStreetMap, Blender, Python, PyTorch
-
----
-
-### **CTMap: LLM-Enabled Connectivity-Aware Path Planning in mmWave Digital Twin Networks**
-**IEEE ICC 2026 (CQRM) | arXiv:2601.00110**
-
-Designed an LLM-driven approach to network path optimization for next-generation 6G networks, achieving:
-- **Connectivity-aware routing** in mmWave networks using digital twin simulation
-- **Practical deployment** on edge devices with on-device inference
-
-[📖 Read on arXiv](https://arxiv.org/abs/2601.00110) | [💻 View Research Code](https://github.com/saitejasrivilli)
-
-This work bridges the gap between LLM reasoning capabilities and systems-level network optimization—proving that transformer-based models can effectively solve constrained optimization problems in telecommunications.
-
----
-
-## 🌐 Live Deployments & Interactive Demos
-
-Experience my work in action. All demos are production-ready and actively maintained:
-
-| Project | Platform | Description | Status |
-|---------|----------|-------------|--------|
-| **🤖 Multi-Strategy AI Agent System** | [🤗 Hugging Face Spaces](https://huggingface.co/spaces/SaiTejaSrivilli/ai-agent-system) | 4 reasoning strategies (CoT, ToT, ReAct, Multi-Agent) with intelligent routing | ✅ Live |
-| **🔍 Glean-Lite: Enterprise RAG** | [Vercel](https://glean-lite.vercel.app) | Go-based RAG engine with semantic search and document ingestion | ✅ Production |
-| **⚡ Edge LLM Benchmark** | [Vercel](https://edge-llm-benchmark.vercel.app) | Real-time LLM benchmarks on MacBook Air M2 using MLX framework | ✅ Interactive |
-| **🌊 Maxwell PINN Solver** | [Streamlit Demo](https://maxwell-pinn-solver.streamlit.app) | Physics-informed neural network solving Maxwell's equations (1700× COMSOL speedup) | ✅ Live |
-
-**Try them out:** Click any link above to see ML/AI in action. No signup required.
+* Scaled Java/Spring Boot microservices on OCI and Kubernetes from **20 to 50+ services** across development, staging, and production.
+* Owned production services and resolved **20+ critical incidents**, improving SLA compliance from **95% → 99.9%**.
+* Increased distributed-system capacity **40%** while reducing infrastructure overhead **20%** through Spring Boot, PostgreSQL, Redis, and connection-pool optimization.
+* Automated deployments using **Jenkins, GitHub Actions, Docker, and Kubernetes**, enabling blue-green deployments and zero-downtime releases.
+* Conducted **100+ code reviews** and mentored **5+ engineers** while improving API response time **25%** and reducing database load **20%**.
 
 ---
 
 ## 🚀 Featured Projects
 
-### 🧠 LLM Post-Training Pipeline — SFT → DPO → GRPO → Agent RL
+### 🧠 LLM Post-Training
 
-End-to-end implementation of modern LLM alignment techniques on Qwen2.5-7B-Instruct across 4× NVIDIA A30 GPUs. All numbers are measured on real hardware.
+| Repository                                                                                            | Focus                                              | Key Result                                          |
+| ----------------------------------------------------------------------------------------------------- | -------------------------------------------------- | --------------------------------------------------- |
+| [**rlhf-synthesis-optimization**](https://github.com/saitejasrivilli/rlhf-synthesis-optimization)     | PPO · DPO · GRPO · Agent GRPO · PRM · RLAIF · STaR | Agent GRPO reward **0.5575**; PRM reward **1.0659** |
+| [**LLM_FineTuning_SFT_Production**](https://github.com/saitejasrivilli/LLM_FineTuning_SFT_Production) | SFT → DPO → RLVR                                   | BERTScore **0.780 → 0.855**; DPO margin **+0.137**  |
+| [**efficient-post-training-suite**](https://github.com/saitejasrivilli/efficient-post-training-suite) | SFT · DPO · GRPO · Agent RL                        | Multi-stage A30 training pipeline                   |
+| [**reward-model-training**](https://github.com/saitejasrivilli/reward-model-training)                 | Bradley-Terry Reward Model                         | **65.0%** validation accuracy                       |
 
-| Repository | Method | Key Result |
-|-----------|--------|-----------|
-| [**rlhf-synthesis-optimization**](https://github.com/saitejasrivilli/rlhf-synthesis-optimization) | PPO · DPO · GRPO · Agent GRPO · PRM · RLAIF · STaR | Agent GRPO best reward **0.5575** (200 iters); PRM best **1.0659**; LLM-PPO **0.9007** |
-| [**LLM_FineTuning_SFT_Production**](https://github.com/saitejasrivilli/LLM_FineTuning_SFT_Production) | SFT → DPO → RLVR | BERTScore **0.780 → 0.855**; DPO margin **+0.137**; RLVR best reward **0.8189** |
-| [**efficient-post-training-suite**](https://github.com/saitejasrivilli/efficient-post-training-suite) | Full 6-stage pipeline + SLURM configs | SFT → DPO → GRPO → Agent → Eval on A30 cluster |
-| [**reward-model-training**](https://github.com/saitejasrivilli/reward-model-training) | Bradley-Terry RM on HH-RLHF · scalar head · ECE + calibration curve | Val acc **65.0%**, test acc **62.7%**, mean margin **0.29** (measured A30) |
-| [**preference-data-pipeline**](https://github.com/saitejasrivilli/preference-data-pipeline) | HH-RLHF · UltraFeedback · OASST1 → quality filter → MinHash dedup → DPO JSONL | 14 unit tests · chatml/llama3 templates · contamination check |
-| [**code-agent-eval-benchmark**](https://github.com/saitejasrivilli/code-agent-eval-benchmark) | ReAct tool-use harness · 14 tasks · python_exec / calculator / lookup | **100%** task success · **100%** error recovery · 1.3 avg steps (ceiling agent) |
-| [**distributed-training-models**](https://github.com/saitejasrivilli/distributed-training-models) | FSDP · DDP · multi-node SLURM | FSDP fp16 2-GPU **21,844 tok/s**; multi-node configs for 2/4-node Qwen2.5-7B |
-| [**attention-optimization**](https://github.com/saitejasrivilli/attention-optimization) | vLLM PagedAttention vs HuggingFace | **1.24–1.32×** throughput · **10–18%** TTFT reduction (10 measured runs) |
+### ⚡ LLM Inference & GPU Optimization
 
-**Key techniques implemented:** GRPO with group-relative advantages, verifiable rewards (RLVR), process reward models with step-level discounting, Constitutional AI (critique→revise→DPO), RLAIF pairwise judge (60 pairs/10 prompts, K=4), rejection sampling fine-tuning (ReST/RAFT), STaR (self-taught reasoner), multi-node FSDP with SLURM, NF4/INT8 quantization.
+| Repository                                                                                        | Focus                                        | Key Result                                           |
+| ------------------------------------------------------------------------------------------------- | -------------------------------------------- | ---------------------------------------------------- |
+| [**attention-optimization**](https://github.com/saitejasrivilli/attention-optimization)           | vLLM PagedAttention                          | **1.24–1.32× throughput**, **10–18% TTFT reduction** |
+| [**gpu-optimization-mistral**](https://github.com/saitejasrivilli/gpu-optimization-mistral)       | Quantization · Kernel Fusion · GPU Profiling | NF4 **61.8% VRAM reduction**                         |
+| [**distributed-training-models**](https://github.com/saitejasrivilli/distributed-training-models) | DDP · FSDP · Multi-GPU Training              | **21,844 tok/s** FSDP FP16 on 2 GPUs                 |
+| [**LORA-implementation**](https://github.com/saitejasrivilli/LORA-implementation)                 | Parameter-efficient fine-tuning              | **10× parameter reduction**                          |
 
----
+### 🌐 Distributed Systems
 
-### ⭐ Advanced AI Agent System — Multi-Strategy Reasoning
+| Repository                                                                                                              | Focus                                          | Key Result                            |
+| ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | ------------------------------------- |
+| [**LedgerDB**](https://github.com/saitejasrivilli/ledgerdb)                                                             | Raft · Replication · Partitioning · MVCC · WAL | **0 data loss / 100 recovery cycles** |
+| [**Distributed Object Store**](https://github.com/saitejasrivilli/distributed-object-store)                             | Replication · Quorum · Failure Recovery        | ~**5K writes/sec**                    |
+| [**DistributedKVStore**](https://github.com/saitejasrivilli/DistributedKVStore)                                         | Distributed KV Storage · Consensus             | Go-based distributed storage          |
+| [**distributed-service-mesh-control-plane**](https://github.com/saitejasrivilli/distributed-service-mesh-control-plane) | Service Discovery · xDS · Control Plane        | Kubernetes/Envoy-based control plane  |
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Implementation-4_Strategies-purple?style=flat-square" />
-  <img src="https://img.shields.io/badge/Inference-Sub_Sec-green?style=flat-square" />
-  <img src="https://img.shields.io/badge/Search-Real_Time-blue?style=flat-square" />
-</div>
+### 🤖 AI Agents & Evaluation
 
-**Multi-strategy AI reasoning system** implementing cutting-edge techniques from recent AI research papers. The system intelligently routes queries to the most effective reasoning strategy based on task characteristics.
-
-**Implemented Strategies:**
-- **Chain-of-Thought (CoT):** Step-by-step reasoning with self-consistency voting across multiple chains
-- **Tree-of-Thoughts (ToT):** Multi-path exploration with beam search for complex problem-solving
-- **ReAct Agent:** Reasoning + Acting loop with real-time web search integration via Tavily
-- **Multi-Agent Orchestration:** Planner → Worker → Critic architecture for collaborative reasoning
-
-**Why This Stack?**
-- **Groq LLM API:** Sub-100ms latency inference—crucial for interactive agent workflows
-- **Tavily Search:** Production-grade real-time search API, more reliable than direct web scraping
-- **ChromaDB:** Lightweight, embeddable vector database—no external service dependency
-- **LangChain:** Mature agent framework with proven patterns for tool integration
-
-**Research Papers Implemented:**
-- [Chain-of-Thought Prompting (Wei et al., 2022)](https://arxiv.org/abs/2201.11903)
-- [Self-Consistency Improves Chain of Thought Reasoning (Wang et al., 2022)](https://arxiv.org/abs/2203.11171)
-- [Tree of Thoughts (Yao et al., 2023)](https://arxiv.org/abs/2305.10601)
-- [ReAct: Synergizing Reasoning and Acting (Yao et al., 2022)](https://arxiv.org/abs/2210.03629)
-
-[🔗 Live Demo](https://huggingface.co/spaces/SaiTejaSrivilli/ai-agent-system) | [📖 GitHub](https://github.com/SaiTejaSrivilli/ai-agent-system)
+| Repository                                                                                    | Focus                               | Result                                                                     |
+| --------------------------------------------------------------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------- |
+| [**code-agent-eval-benchmark**](https://github.com/saitejasrivilli/code-agent-eval-benchmark) | ReAct · Tool Use · Agent Evaluation | **100% task success**, **100% error recovery**                             |
+| [**ai-agent-system**](https://github.com/SaiTejaSrivilli/ai-agent-system)                     | CoT · ToT · ReAct · Multi-Agent     | [Live Demo](https://huggingface.co/spaces/SaiTejaSrivilli/ai-agent-system) |
+| [**AdvancedLLMAgent**](https://github.com/saitejasrivilli/AdvancedLLMAgent)                   | Tool Calling · RAG · Agents         | LangChain-based agent                                                      |
+| [**offline-rag-assistant**](https://github.com/saitejasrivilli/offline-rag-assistant)         | Local LLM · Vector Search · RAG     | Offline deployment                                                         |
 
 ---
 
-### 🔥 LLM & GPU Optimization
+## 🔬 Research
 
-**Achieving production-scale inference performance through systematic optimization.**
+### **DTMAP: Digital Twin-Guided AI Path Planning for Connectivity-Aware Mobility**
 
-#### Performance Benchmarks (Measured — NVIDIA A30, Qwen2.5-7B-Instruct)
+**IEEE Open Journal of the Communications Society — Accepted 2026**
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│          vLLM vs HuggingFace generate() — Real Measurements      │
-├─────────────────────────────────────────────────────────────────┤
-│  Batch │ HF tok/s │ vLLM tok/s │ Speedup │ HF TTFT │ vLLM TTFT │
-│  ──────┼──────────┼────────────┼─────────┼─────────┼────────── │
-│    1   │   37.6   │    49.8    │  1.32×  │  29 ms  │   24 ms   │
-│    4   │  149.1   │   190.2    │  1.28×  │  32 ms  │   28 ms   │
-│    8   │  297.7   │   368.4    │  1.24×  │  49 ms  │   43 ms   │
-│   16   │  563.1   │   697.5    │  1.24×  │  73 ms  │   66 ms   │
-│                                                                   │
-│  Mechanism: PagedAttention KV-cache + CUDA graph capture         │
-│  3 warmup + 5 measure runs per batch size                        │
-└─────────────────────────────────────────────────────────────────┘
+Multi-objective path-planning framework combining wireless digital twins with a fine-tuned LLM for connectivity-aware navigation in 6G/XR environments.
 
-┌─────────────────────────────────────────────────────────────────┐
-│            Quantization — FP16 vs INT8 vs NF4 (A30)             │
-├─────────────────────────────────────────────────────────────────┤
-│  Precision │  TTFT   │  tok/s │  VRAM   │  Reduction            │
-│  ──────────┼─────────┼────────┼─────────┼──────────────         │
-│  FP16      │  69.8ms │  19.4  │ 15.25GB │  baseline             │
-│  INT8      │ 1392ms  │   1.2  │  8.82GB │  −42.2% VRAM          │
-│  NF4       │  272ms  │  16.2  │  5.83GB │  −61.8% VRAM ✅       │
-│                                                                   │
-│  NF4: best tradeoff — 61.8% memory reduction, 16% throughput    │
-│  loss. Fits Qwen2.5-7B in 5.83 GB (RTX 3080 / 4070 class)      │
-└─────────────────────────────────────────────────────────────────┘
-```
+* **1.9% outage probability** vs. 2.3% for RL baseline
+* **312 ms** average inference latency
+* Tunable optimization parameter controlling signal strength vs. travel distance
+* GPT-4o Mini fine-tuned using Digital Twin-grounded routing data
+* Deterministic sanitization improved raw LLM path validity **65% → 100%**
 
-**Optimization techniques benchmarked on hardware:**
-1. **NF4 / INT8 quantization (bitsandbytes):** FP16→NF4 saves 61.8% VRAM at 16% throughput loss; INT8 slower at batch=1 due to dequantization overhead
-2. **PagedAttention (vLLM):** 1.24–1.32× throughput, 10–18% TTFT reduction vs HuggingFace generate()
-3. **Kernel fusion (torch.compile):** FusedLayerNormLinear eliminates HBM round-trip between LayerNorm and Linear
-4. **Gradient checkpointing:** recompute activations on backward — reduces peak memory at cost of ~33% extra compute
-5. **DataParallel 4× GPU:** 1.80× throughput on 4× A30; CUDA kernel dispatch overhead measured
+**Stack:** GPT-4o Mini, OpenAI Fine-tuning API, NVIDIA Sionna, OpenStreetMap, Blender, Python, PyTorch
 
-#### Featured Optimization Projects
-
-| Repository | Focus | Key Result | Status |
-|-----------|-------|-----------|--------|
-| [**attention-optimization**](https://github.com/saitejasrivilli/attention-optimization) | vLLM PagedAttention vs HuggingFace generate() — 4 batch sizes, 10 measured runs | **1.24–1.32× throughput**, **10–18% TTFT reduction** | ⭐ Measured |
-| [**gpu-optimization-mistral**](https://github.com/saitejasrivilli/gpu-optimization-mistral) | FP16/INT8/NF4 quantization + kernel fusion + DataParallel profiling on 4× A30 | NF4 **−61.8% VRAM**, fused ops **37×** on targeted layers | ✅ Measured |
-| [**LORA-implementation**](https://github.com/saitejasrivilli/LORA-implementation) | Low-Rank Adaptation for parameter-efficient fine-tuning | 10× parameter reduction | ✅ Complete |
-
-**Quick Start: Benchmarking vLLM**
-```bash
-git clone https://github.com/saitejasrivilli/attention-optimization
-cd attention-optimization
-pip install -r requirements.txt
-python benchmark.py --model Qwen/Qwen2.5-7B-Instruct --batch-sizes 1 4 8 16
-# Results: 1.24–1.32× throughput gain over HF generate() on NVIDIA A30
-```
+[📖 arXiv](https://arxiv.org/abs/2601.00110)
 
 ---
 
-### 🤖 AI Agents & Multi-Agent Systems
+### **CTMap: LLM-Enabled Connectivity-Aware Path Planning in Millimeter-Wave Digital Twin Networks**
 
-Building intelligent agents that reason, plan, and collaborate.
+**IEEE ICC 2026**
 
-| Project | Description | Architecture | Status |
-|---------|-------------|--------------|--------|
-| [**ai-agent-system**](https://github.com/SaiTejaSrivilli/ai-agent-system) | Multi-strategy AI reasoning with 4 reasoning modes | Groq + Tavily + ChromaDB | ⭐ Live |
-| [**AdvancedLLMAgent**](https://github.com/saitejasrivilli/AdvancedLLMAgent) | Sophisticated agent with function calling & tool use | LangChain + RAG | ✅ Production |
-| [**Multi_Agent_Workflow_Automator**](https://github.com/saitejasrivilli/Multi_Agent_Workflow_Automator) | Multi-agent orchestration for complex workflows | Agent coordinator pattern | ✅ Scalable |
-| [**offline-rag-assistant**](https://github.com/saitejasrivilli/offline-rag-assistant) | Privacy-focused RAG for offline deployment | Vector DB + Local LLM | ✅ Deployable |
+LLM-driven path optimization for next-generation mmWave/6G networks using Digital Twin simulation and connectivity-aware routing.
 
-**Agent Architecture Patterns Implemented:**
+* Connectivity-aware routing using mmWave signal propagation
+* Digital Twin-based network simulation
+* Modified Dijkstra routing
+* LLM-based path planning
+* Practical edge inference considerations
 
-```
-Input Query
-    ↓
-┌─────────────────────────────────────────┐
-│   LLM Auto-Classifier                   │  ← Intelligent Strategy Routing
-│   (Task Type: Reasoning/Search/Coding)  │
-└─────────────────────────────────────────┘
-    ↓
-Route to Optimal Strategy:
-    ├→ [Simple Q&A] → Chain-of-Thought
-    ├→ [Complex Problem] → Tree-of-Thoughts  
-    ├→ [Fact Retrieval] → ReAct (with Search)
-    └→ [Multi-step Task] → Multi-Agent (Plan→Execute→Critique)
-    
-    ↓
-Agent Loop: Thought → Action → Observation → (repeat)
-    ↓
-Return Result with Reasoning Trail
-```
+[📖 arXiv](https://arxiv.org/abs/2601.00110)
 
 ---
 
-### 🔬 ML Systems & Computer Vision
+## 📊 Selected Benchmarks
 
-Production-ready machine learning systems from data to deployment.
+### LLM Inference — NVIDIA A30
 
-| Project | Description | Tech Stack | Impact |
-|---------|-------------|-----------|--------|
-| [**ai-video-analysis-system**](https://github.com/saitejasrivilli/ai-video-analysis-system) | End-to-end video analysis with object detection & tracking | PyTorch, OpenCV, YOLO | Real-time (30 FPS) |
-| [**ComputerVision**](https://github.com/saitejasrivilli/ComputerVision) | Computer vision algorithms & deep learning implementations | TensorFlow, OpenCV, Detectron2 | Comprehensive suite |
-| [**TeluguGPT**](https://github.com/saitejasrivilli/TeluguGPT) | Language model specialized for Telugu language | Transformers, HuggingFace | Domain-specific LLM |
-| [**TelecomGPT**](https://github.com/saitejasrivilli/TelecomGPT) | Domain-specific LLM for telecom industry | Fine-tuning, LoRA, Transfer Learning | Industry-focused |
+| Batch | Hugging Face |        vLLM |   Speedup | TTFT Reduction |
+| ----: | -----------: | ----------: | --------: | -------------: |
+|     1 |   37.6 tok/s |  49.8 tok/s | **1.32×** |        **17%** |
+|     4 |  149.1 tok/s | 190.2 tok/s | **1.28×** |        **13%** |
+|     8 |  297.7 tok/s | 368.4 tok/s | **1.24×** |        **12%** |
+|    16 |  563.1 tok/s | 697.5 tok/s | **1.24×** |        **10%** |
 
----
+**Mechanism:** vLLM PagedAttention + CUDA graph capture.
 
-### 📊 Data Engineering & ML Pipelines
+### Quantization — Qwen2.5-7B
 
-Scalable systems for data processing and machine learning workflows.
+| Precision |    TTFT | Throughput |        VRAM |
+| --------- | ------: | ---------: | ----------: |
+| FP16      | 69.8 ms | 19.4 tok/s |    15.25 GB |
+| INT8      | 1392 ms |  1.2 tok/s |     8.82 GB |
+| NF4       |  272 ms | 16.2 tok/s | **5.83 GB** |
 
-| Project | Description | Tech Stack | Scale |
-|---------|-------------|-----------|-------|
-| [**DistributedKVStore**](https://github.com/saitejasrivilli/DistributedKVStore) | Distributed key-value store with consensus algorithms | Go, Raft, gRPC | Production-ready |
-| [**end-to-end-data-engineering-project**](https://github.com/saitejasrivilli/end-to-end-data-engineering-project) | Complete ETL pipeline: ingestion → processing → analytics | Spark, Airflow, Cloud SQL | Enterprise scale |
-| [**Collaborative_filtering_recommender_system**](https://github.com/saitejasrivilli/Collaborative_filtering_recommender_system) | Scalable recommendation engine for e-commerce | PySpark, MLlib | Millions of users |
-| [**TelecomChurnPredictor**](https://github.com/saitejasrivilli/TelecomChurnPredictor) | Customer churn prediction system with feature engineering | PySpark, XGBoost, MLflow | 95%+ accuracy |
-
-**Quick Example: Running the Recommendation Engine**
-```bash
-git clone https://github.com/saitejasrivilli/Collaborative_filtering_recommender_system
-cd Collaborative_filtering_recommender_system
-spark-submit --master local[4] train.py --data ./movielens-20m
-# Output: Personalized recommendations for 10K+ users
-```
+NF4 reduced VRAM **61.8%** with approximately **16% throughput loss**.
 
 ---
 
-### 🛡️ AI Safety & Evaluation
+## 🛠️ Technical Skills
 
-Rigorous evaluation frameworks for responsible AI development.
+### ML / LLM
 
-| Project | Description | Focus Area | Status |
-|---------|-------------|-----------|--------|
-| [**Red-Teaming-Failure-Analysis-Mitigation**](https://github.com/saitejasrivilli/Red-Teaming-Failure-Analysis-Mitigation) | Systematic LLM red-teaming with adversarial prompt generation | Safety, Robustness | ✅ Active |
-| [**Generative-Model-Safety-Evaluation**](https://github.com/saitejasrivilli/Generative-Model-Safety-Evaluation-LLMs-Diffusion-Models) | Safety benchmarks for LLMs and diffusion models | Evaluation, Benchmarking | ✅ Comprehensive |
-| [**llm-long-context-stress-test**](https://github.com/saitejasrivilli/llm-long-context-stress-test) | Stress testing LLMs on long-context tasks (100K+ tokens) | Capability Testing | ✅ Published |
-| [**simulation-planning-evaluation**](https://github.com/saitejasrivilli/simulation-planning-evaluation) | Evaluation framework for agent planning capabilities | Agent Evaluation | ✅ Extensible |
+* PyTorch, JAX, Hugging Face Transformers
+* LLMs, RAG, Fine-Tuning, LoRA/QLoRA
+* SFT, DPO, GRPO, RLVR, Reward Models
+* Embeddings, Vector Search, Reranking
+* Agentic AI, Tool Calling, Model Evaluation
 
----
+### ML Systems / GPU
 
-## 🛠️ Technical Skills & Expertise
+* PyTorch DDP, FSDP, NCCL
+* CUDA, FlashAttention-2, vLLM
+* TensorRT, ONNX Runtime
+* KV Cache, PagedAttention
+* Quantization: NF4, INT8
+* Distributed Training, Model Serving
 
-<table>
-<tr>
-<td valign="top" width="33%">
+### Distributed Systems / Backend
 
-### 🤖 ML/DL & LLMs
-- **Core:** PyTorch, TensorFlow, JAX
-- **LLM Frameworks:** LangChain, LlamaIndex, vLLM
-- **Techniques:** RAG, Vector DBs, LoRA/QLoRA
-- **Inference:** Quantization, Speculative Decoding
-- **Optimization:** CUDA, FlashAttention, KV-Cache
+* Go, Java, Python, C++, SQL
+* Raft, Replication, Partitioning, MVCC
+* Fault Tolerance, High Availability
+* Microservices, REST, gRPC
+* PostgreSQL, Redis, MySQL
 
-</td>
-<td valign="top" width="33%">
+### Cloud / Infrastructure
 
-### ☁️ Cloud & Infrastructure
-- **AWS:** EC2, S3, SageMaker, Lambda (Certified)
-- **Oracle:** GenAI, Vector Search, Cloud Infrastructure
-- **Microsoft:** Azure, Fabric (Certified)
-- **Containerization:** Docker, Kubernetes, Helm
-- **MLOps:** CI/CD, Monitoring, Reproducibility
-
-</td>
-<td valign="top" width="33%">
-
-### 💻 Software Engineering
-- **Languages:** Python, Go, C++, Java, SQL
-- **Web:** FastAPI, Flask, REST APIs
-- **Databases:** PostgreSQL, Neo4j, Redis
-- **Messaging:** Kafka, RabbitMQ
-- **Systems:** Distributed Systems, DSA
-
-</td>
-</tr>
-</table>
+* AWS: EC2, S3, Lambda, SageMaker
+* Kubernetes, Docker
+* Jenkins, GitHub Actions, CI/CD
+* Prometheus, Grafana
+* Oracle Cloud Infrastructure
 
 ---
 
-## 🎓 Specialized Expertise Matrix
+## 🏆 Selected Impact
 
-Where I have deep, production-tested knowledge:
-
-| Domain | Depth | Key Projects | Evidence |
-|--------|-------|--------------|---------|
-| **LLM Post-Training (RLHF/GRPO)** | ⭐⭐⭐⭐⭐ | PPO, DPO, GRPO, Agent GRPO, PRM, RLAIF, STaR | best_reward 0.5575–1.0659 measured |
-| **Reward Modeling & Evaluation** | ⭐⭐⭐⭐⭐ | Verifiable rewards, process rewards, LLM-as-judge | GSM8K 54%, HumanEval 70% |
-| **LLM Inference & Optimization** | ⭐⭐⭐⭐⭐ | vLLM PagedAttention, NF4/INT8 quant, KV-cache | 1.32× throughput, −61.8% VRAM |
-| **Distributed Training** | ⭐⭐⭐⭐⭐ | FSDP, DDP, multi-node SLURM, torchrun | 21,844 tok/s FSDP fp16 2-GPU |
-| **GPU Optimization & CUDA** | ⭐⭐⭐⭐⭐ | Profiling, quantization, attention, gradient checkpointing | A30 4-GPU cluster |
-| **Multi-Agent & RAG Systems** | ⭐⭐⭐⭐ | ReAct, CoT, ToT, self-healing RAG | Production deployments |
-| **Cloud Architecture** | ⭐⭐⭐⭐ | AWS, Oracle, Kubernetes, FHIR/EPIC | Certified, Qure.ai prod |
-| **Research & Publications** | ⭐⭐⭐⭐ | IEEE OJCOMS 2026, ICC 2026, path planning | 2 peer-reviewed venues |
-
----
-
-## 🏆 Certifications & Continuous Learning
-
-### Professional Certifications
-
-| Certification | Issuer | Validity | Focus |
-|--------------|--------|----------|-------|
-| **AWS Certified Data Engineer – Associate** | Amazon Web Services | Dec 2024 – Dec 2027 | Cloud data pipelines, ETL, analytics |
-| **Microsoft Certified: Data Engineer Associate** | Microsoft | Aug 2025 – Aug 2026 | Fabric, Azure, data architecture |
-| **Oracle Cloud Associate Cloud Engineer** | Oracle | Jun 2024 – Jun 2026 | Cloud infrastructure, GenAI services |
-| **Oracle AI Vector Search Specialist** | Oracle | Feb 2025 – Feb 2027 | Vector databases, RAG, semantic search |
-| **Neo4j Certified Associate** | Neo4j | Jul 2024 – Jul 2026 | Graph databases, Cypher, data modeling |
-| **Certified Data Scientist** | 365 Data Science | Nov 2024 | ML fundamentals, deep learning, SQL |
-| **Machine Learning in Production (Honors)** | EDX (UC Berkeley) | Jun 2024 | MLOps, model deployment, monitoring |
-
-### Specialized Technical Training
-
-| Course | Provider | Completion | Key Skills |
-|--------|----------|-----------|-----------|
-| **Advanced Large Language Model Agents** | UC Berkeley EECS | Jul 2025 | Inference-time reasoning, DPO, RAG, neural-symbolic AI |
-| **AI Evaluations for Everyone** | Anthropic & Aishwarya Naresh | Dec 2025 | LLM benchmarking, evaluation frameworks, quality metrics |
-| **Agentforce Specialist** | Salesforce | Jun 2025 | LLM prompt engineering, agent design, enterprise AI |
-| **CodePath Technical Interview Prep** | CodePath | May 2025 | DSA, competitive programming, system design |
-| **Neo4j Graph Academy** | Neo4j | Jul 2024 | Advanced Cypher, graph algorithms, recommendations |
+* **21%** improvement in RAG retrieval relevance
+* **30%** reduction in RAG hallucinations
+* **78% → 86%** task accuracy improvement
+* **1.2s → 420ms** p95 LLM latency reduction
+* **3.14×** distributed training throughput improvement
+* **21%** per-GPU memory reduction with FSDP
+* **1.24–1.32×** vLLM inference throughput improvement
+* **61.8%** VRAM reduction with NF4 quantization
+* **20 → 50+** production microservices at TCS
+* **95% → 99.9%** production SLA improvement
+* **40%** backend capacity improvement
+* **100+** code reviews
+* **5+** engineers mentored
+* **1,000+** Digital Twin instruction-tuning samples
+* **10K+** routing scenarios
+* **100%** valid route generation
+* **0 data loss** across 100 LedgerDB failure-recovery cycles
 
 ---
 
-## 📈 Key Achievements & Impact
+## 📚 Certifications
 
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│                     PRODUCTION IMPACT METRICS                        │
-├──────────────────────────────────────────────────────────────────────┤
-│                                                                      │
-│  🚀 Post-Training Results          🏆 Research & Publications         │
-│  ├─ Agent GRPO reward 0.5575      ├─ IEEE OJCOMS journal (2026)    │
-│  ├─ PRM best reward 1.0659        ├─ IEEE ICC 2026 conference      │
-│  ├─ vLLM 1.32× throughput gain   ├─ 1700× COMSOL speedup (PINN)   │
-│  └─ NF4 −61.8% VRAM (5.83 GB)    └─ 3 patent-eligible algorithms   │
-│                                                                      │
-│  📚 Open Source & Community        🎓 Career Development             │
-│  ├─ 40+ public repositories       ├─ 6+ cloud certifications       │
-│  ├- Active in AI safety research  ├─ 20+ specialized courses       │
-│ 
-│                                                                      │
-│  🔧 Systems Engineering           💼 Professional Growth             │
-│  ├─ Multi-GPU DDP training        ├─ From SWE → ML Engineer path   │
-│  ├─ Kubernetes orchestration      ├─ 4 years TCS → frontier AI      │
-│  └─ End-to-end ML pipelines       └─ Healthcare AI focus (Qure.ai) │
-│                                                                      │
-└──────────────────────────────────────────────────────────────────────┘
-```
+* AWS Certified Data Engineer – Associate
+* Microsoft Certified: Data Engineer Associate
+* Oracle Cloud Associate Cloud Engineer
+* Oracle AI Vector Search Specialist
+* Neo4j Certified Associate
 
 ---
 
-## 🎯 What I'm Currently Working On
+## 📫 Connect
 
-- 🔭 **LLM post-training**: Constitutional AI (critique→revise→DPO), RLAIF pairwise judge, rejection sampling SFT
-- 🌱 **Agent evaluation**: ReAct harness with tool-use (python_exec / calculator / lookup), 14 tasks, error recovery
-- ⚡ **Inference optimization**: vLLM PagedAttention benchmarks, NF4 quantization (−61.8% VRAM), multi-node FSDP
-- 🏥 **Clinical AI**: LLM-based protocol automation with FHIR/EPIC integrations at Qure.ai
-- 📊 **Reward modeling**: Bradley-Terry RM (65% val acc), BoN scaling, calibration analysis
+I'm interested in opportunities across **AI/ML Engineering, ML Systems, LLM Infrastructure, Distributed Systems, and Software Engineering**.
 
----
+* 💼 [LinkedIn](https://linkedin.com/in/saitejasrivilli)
+* 💻 [GitHub](https://github.com/saitejasrivilli)
+* 📚 [Google Scholar](https://scholar.google.com/citations?user=StKZohYAAAAJ)
+* 🌐 [Portfolio](https://saitejasrivillibhutturu.github.io)
 
-## 🌍 Why I'm Unique
-
-1. **Post-Training depth:** implemented the full stack — SFT, DPO, PPO, GRPO, Agent GRPO with tool use, PRM, RLAIF, STaR — all with real measured results on Qwen2.5-7B
-2. **Verifiable numbers:** every benchmark in my repos is measured on real hardware (NVIDIA A30), not estimated or copy-pasted
-3. **Systems + algorithms:** can take a training run from SLURM launch through multi-node FSDP to reward model evaluation
-4. **Published Researcher:** 2 IEEE publications (OJCOMS 2026, ICC 2026) on LLM-based path planning in 6G networks
-5. **Production AI:** shipping clinical LLM automation with FHIR/EPIC integrations at Qure.ai
-6. **40+ public repos** spanning post-training, inference optimization, distributed training, and evaluation
-
----
-
-## 📫 Let's Connect & Collaborate
-
-I'm actively seeking opportunities in **LLM Post-Training**, **RLHF/GRPO research engineering**, and **ML Systems** roles. Whether you're building frontier AI alignment pipelines, scaling reward modeling, or advancing agent evaluation—let's talk!
-
-<div align="center">
-
-**Reach out for:**
-- 🔍 Technical collaboration on ML/AI projects
-- 💼 ML Engineering & LLM Engineer opportunities
-- 🎓 Mentorship in LLM optimization & RAG systems
-- 🚀 Open-source contributions & research partnerships
-
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:saiteja.srivillibhutturu@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/saitejasrivilli)
-[![Google Scholar](https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=StKZohYAAAAJ)
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://saitejasrivillibhutturu.github.io)
-
-</div>
-
----
-
-<div align="center">
-<i>⭐ If you find my projects useful, consider giving them a star and sharing with others building the future of AI!</i>
 </div>
