@@ -57,6 +57,7 @@ More projects: [all public repositories](https://github.com/saitejasrivilli?tab=
 
 - **DTMAP — Digital Twin-Guided AI Path Planning for Connectivity-Aware Mobility.** *IEEE Open Journal of the Communications Society, 2026.* [DOI](https://doi.org/10.1109/OJCOMS.2026.3683886)
 - **CTMap — LLM-Enabled Connectivity-Aware Path Planning for mmWave 6G Networks.** *IEEE ICC 2026.* [arXiv preprint](https://arxiv.org/abs/2601.00110)
+- **DT-LAWN: Incrementally Synchronized Digital Twins for Real-Time NextG Wireless Navigation.** *ACM, 2026.* [ACM Digital Library](https://dl.acm.org/doi/10.1145/3842434.3844960)
 - **Efficiency–Equity Trade-Off Characterization in Hierarchical Traffic Congestion Pricing.** *IEEE ITSC 2026.* [Paper PDF](https://dipupo.github.io/pdf/ITSC26_1413_FI.pdf)
 
 ## Technical Areas
