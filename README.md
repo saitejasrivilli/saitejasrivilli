@@ -5,7 +5,7 @@
 ### ML Systems & LLM Inference Engineer
 **GPU Optimization · LLM Training & Serving · Distributed Systems · Backend Engineering**
 
-[LinkedIn](https://linkedin.com/in/saitejasrivilli) · [GitHub](https://github.com/saitejasrivilli) · [Portfolio](https://saitejasrivilli.github.io) · [Google Scholar](https://scholar.google.com/citations?user=StKZohYAAAAJ)
+[LinkedIn](https://www.linkedin.com/in/saitejasrivillibhutturu/) · [GitHub](https://github.com/saitejasrivilli) · [Portfolio](https://saitejasrivilli.github.io) · [Google Scholar](https://scholar.google.com/citations?user=StKZohYAAAAJ)
 
 </div>
 
@@ -45,7 +45,7 @@ I build and evaluate machine-learning systems from model training through infere
 | Project | What it demonstrates | Reported benchmark / evidence |
 |---|---|---|
 | [metal-inference-server](https://github.com/saitejasrivilli/metal-inference-server) | Continuous-batching LLM inference for Apple Silicon, paged KV cache, streaming, cancellation, metrics, and traces | About 1.5× throughput improvement from continuous batching in the documented M-series Mac setup; negative quantization results are also documented |
-| [LLMBoost](https://github.com/saitejasrivilli/LLMBoost) | MLIR compiler pass for RMSNorm → Linear fusion | 2.20× FP16 and 1.55× BF16 speedup for the measured workload on a 4× NVIDIA A30 cluster |
+| [LLMBoost](https://github.com/saitejasrivilli/LLMBoost) | MLIR compiler pass for RMSNorm → Linear fusion | 1.63× FP16 speedup for the documented [512, 4096] × [4096, 4096] shape (calculated from 0.340 ms / 0.208 ms); a separate dtype summary reports 1.55× BF16 |
 | [flash-attn-from-scratch](https://github.com/saitejasrivilli/flash-attn-from-scratch) | Triton FlashAttention, int8 GEMM with fused dequantization, and fused CUDA kernels | NVIDIA A30 measurements with per-sequence-length comparisons against PyTorch SDPA |
 | [distributed-training-models](https://github.com/saitejasrivilli/distributed-training-models) | PyTorch DDP/FSDP, mixed precision, and pipeline-parallel training | 3.14× AMP throughput versus FP32 in the reported single-A30 setup; FSDP memory results documented by configuration |
 | [search-engine-rs](https://github.com/saitejasrivilli/search-engine-rs) | Rust tokenizer, inverted index, BM25, sharded query execution, and HTTP control plane | Median 1.55× postings-intersection speedup and 4.35× batch-query speedup across five runs on 82,360 MS MARCO passages |
@@ -68,6 +68,6 @@ More projects: [all public repositories](https://github.com/saitejasrivilli?tab=
 
 ## Contact
 
-- [LinkedIn](https://linkedin.com/in/saitejasrivilli)
+- [LinkedIn](https://www.linkedin.com/in/saitejasrivillibhutturu/)
 - [Email](mailto:saiteja.srivillibhutturu@gmail.com)
 - [Portfolio](https://saitejasrivilli.github.io)
